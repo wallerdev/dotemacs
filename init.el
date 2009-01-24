@@ -31,6 +31,11 @@
 (require 'find-recursive)
 (require 'snippet)
 
+; textile
+
+(require 'textile-minor-mode)
+(add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-minor-mode))
+
 ; yaml
 
 (require 'yaml-mode)
