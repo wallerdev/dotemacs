@@ -1,8 +1,9 @@
 ; remove splash screen
-
 (setq inhibit-splash-screen t)
 
-; ruby                                                                                                                         
+; remove menus etc
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ; highlight marked region
 (transient-mark-mode t)
@@ -15,6 +16,25 @@
 
 ; open new line
 (global-set-key (kbd "C-o") (kbd "C-e C-j"))
+
+; Use C-x C-m for meta
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+; Backwards kill word
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
+; load libraries
+(setq load-path (cons "~/.emacs.d/site-lisp" load-path))
+(require 'find-recursive)
+(require 'snippet)
+
+; yaml
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ; os x copy paste
 (defun copy-from-osx ()
@@ -81,6 +101,12 @@
             (ruby-electric-mode t)
             ))
 
+;; Import Rails mode
+
+(setq load-path (cons "~/.emacs.d/site-lisp/rails" load-path))
+(require 'rails)
+ 
+
 ;; Import C# mode
 (require 'cc-mode)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/csharp")
@@ -107,4 +133,5 @@
 (set-face-foreground 'font-lock-warning-face "#E6BF6C")
 (set-face-foreground 'font-lock-doc-face "#E6BF6C")
 (set-face-foreground 'minibuffer-prompt "#C97836")
+(set-face-background 'region "#333C48")
 (server-start)
