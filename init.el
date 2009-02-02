@@ -139,5 +139,7 @@
       (set-face-foreground 'font-lock-warning-face "#E6BF6C")
       (set-face-foreground 'font-lock-doc-face "#E6BF6C")
       (set-face-foreground 'minibuffer-prompt "#C97836")
-      (set-face-background 'region "#333C48")))
+      (set-face-background 'region "#333C48")
+      (set-face-foreground 'textile-ol-bullet-face "#C97836")
+      (set-face-foreground 'textile-ul-bullet-face "#719CBD")))
 (server-start)
