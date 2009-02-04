@@ -1,3 +1,6 @@
+; add usr/local/bin to path
+(setenv "PATH" (concat "/usr/local/bin" ":" (getenv "PATH")))
+
 ; remove splash screen
 (setq inhibit-splash-screen t)
 
@@ -30,6 +33,7 @@
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 (require 'find-recursive)
 (require 'snippet)
+(require 'gist)
 
 ; textile
 
