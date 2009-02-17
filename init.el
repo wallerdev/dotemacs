@@ -17,6 +17,11 @@
 ; disable auto save
 (setq auto-save-default nil)
 
+; cursor style
+(setq default-cursor-type 'box)
+(set-cursor-color "#606060")
+(blink-cursor-mode t)
+
 ; open new line
 (global-set-key (kbd "C-o") (kbd "C-e C-j"))
 
@@ -28,6 +33,9 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
+
+; fix indent settings for css to be 2
+(setq-default css-indent-offset 2)
 
 ; load libraries
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
@@ -123,6 +131,11 @@
 (setq auto-mode-alist
       (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
 
+;; Import js mode
+(add-to-list 'load-path "~/.emacs.d/site-lisp/js2")
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 ; colors
 (if window-system
     (progn      
@@ -145,5 +158,21 @@
       (set-face-foreground 'minibuffer-prompt "#C97836")
       (set-face-background 'region "#333C48")
       (set-face-foreground 'textile-ol-bullet-face "#C97836")
+      (set-face-foreground 'textile-acronym-face "#719CBD")
       (set-face-foreground 'textile-ul-bullet-face "#719CBD")))
 (server-start)
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(standard-indent 2)
+ '(tab-stop-list (quote (2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34)))
+ '(tab-width 2))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
