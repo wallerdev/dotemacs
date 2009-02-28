@@ -47,12 +47,10 @@
 (require 'gist)
 
 ; textile
-
 (require 'textile-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-minor-mode))
 
 ; yaml
-
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
