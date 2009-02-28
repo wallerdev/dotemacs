@@ -11,6 +11,9 @@
 ; highlight marked region
 (transient-mark-mode t)
 
+; don't want tabs
+(setq-default indent-tabs-mode nil)
+
 ; disable backup
 (setq backup-inhibited t)
 
