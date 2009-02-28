@@ -160,6 +160,7 @@
       (set-face-foreground 'font-lock-doc-face "#E6BF6C")
       (set-face-foreground 'minibuffer-prompt "#C97836")
       (set-face-background 'region "#333C48")
+			(set-face-foreground 'js2-function-param-face "#B0D9CE")
       (set-face-foreground 'textile-ol-bullet-face "#C97836")
       (set-face-foreground 'textile-acronym-face "#719CBD")
       (set-face-foreground 'textile-ul-bullet-face "#719CBD")))
